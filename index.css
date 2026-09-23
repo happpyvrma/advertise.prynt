@@ -559,3 +559,56 @@ footer {
     margin-right: auto;
   }
 }
+
+/* --- Netflix Style Intro --- */
+.netflix-intro {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOutIntro 0.8s ease-in-out 3.5s forwards;
+}
+
+.netflix-intro-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #E50914; /* Netflix Red */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: netflixZoom 3s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+@keyframes netflixZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 40px rgba(229, 9, 20, 0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+    text-shadow: 0 0 40px rgba(229, 9, 20, 0.8);
+  }
+}
+
+@keyframes fadeOutIntro {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
